@@ -1,0 +1,461 @@
+/* --- TEMEL AYARLAR VE YENİ KARANLIK TEMA --- */
+:root {
+    --primary-color: #4A90E2; /* Ana Vurgu Rengi (Mavi) */
+    --secondary-color: #50E3C2; /* İkincil Vurgu Rengi (Yeşil) */
+    
+    /* Yeni Koyu Tema Renkleri */
+    --dark-bg: #1a1a1a;         /* Ana Arka Plan */
+    --card-bg: #242424;         /* Kart, Menü, Footer Arka Planı */
+    --border-color: #444;       /* Zarif Kenarlık Rengi */
+    
+    --text-color: #e0e0e0;      /* Ana Metin Rengi (Beyaz-Gri) */
+    --heading-color: #ffffff;   /* Başlık Rengi (Saf Beyaz) */
+}
+
+/* Google Fonts (Aynen kalıyor) */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--heading-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- BUTONLAR (Modernize Edildi) --- */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* --- NAVİGASYON (GENEL/MASAÜSTÜ) --- */
+nav {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 28px;
+    color: var(--heading-color);
+}
+
+nav .nav-links {
+    list-style: none; /* Noktaları kaldırır */
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    display: inline-block; /* Yan yana dizer */
+    margin-left: 25px;
+}
+
+nav .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- ANA BAŞLIK (HERO - Efekt Eklendi) --- */
+.hero {
+    background: 
+        radial-gradient(ellipse at center, rgba(74, 144, 226, 0.15) 0%, rgba(26, 26, 26, 0) 70%), 
+        var(--dark-bg);
+    height: 60vh;
+    min-height: 400px;
+    color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+/* --- BÖLÜM AYARLARI --- */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+section:nth-of-type(even) {
+    background-color: transparent; 
+}
+
+/* --- PROJELER BÖLÜMÜ --- */
+.proje-galerisi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.proje-karti {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proje-karti:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.2);
+}
+
+.proje-gorseli img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.proje-icerik {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.proje-icerik h3 {
+    font-size: 28px;
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.proje-icerik p {
+    flex-grow: 1;
+}
+
+.proje-teknolojileri {
+    margin: 15px 0;
+}
+
+.proje-teknolojileri span {
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    color: #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.proje-linkleri a {
+    margin-right: 10px;
+}
+
+.video-container, .webgl-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.video-container iframe,
+.webgl-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#projeler .proje-tipi-baslik {
+    font-size: 36px;
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 60px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+#projeler .proje-tipi-baslik:first-of-type {
+    margin-top: 0;
+}
+
+
+/* --- YENİ BÖLÜM: BAŞARILAR (Tekil Karta Göre Güncellendi) --- */
+#basarilar {
+    padding-top: 0; /* Projeler bölümünün hemen altında, ekstra boşluk olmasın */
+}
+
+/* .basari-galerisi stili kaldırıldı (artık grid değil) */
+
+.basari-karti-tekil {
+    display: flex; /* Fotoğraf ve yazıyı yan yana koyar */
+    align-items: center;
+    gap: 30px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.basari-karti-tekil:hover {
+    transform: translateY(-5px);
+    /* Başarılar kartının üzerine gelince yeşil gölge */
+    box-shadow: 0 8px 25px rgba(80, 227, 194, 0.2); 
+}
+
+.basari-foto {
+    flex: 1; /* Fotoğrafın kaplayacağı alan */
+    min-width: 300px; /* Fotoğrafın çok küçülmesini engeller */
+    border-bottom: none; /* Önceki stilden kalanı sıfırlar */
+}
+
+.basari-foto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Fotoğrafa hafif ovallik verir */
+}
+
+.basari-aciklama {
+    flex: 2; /* Açıklamanın kaplayacağı alan */
+    padding: 0; /* Önceki stilden kalanı sıfırlar */
+}
+
+.basari-aciklama h3 {
+    font-size: 32px; /* Yazı boyutu büyütüldü */
+    color: var(--secondary-color); /* Başarı başlıkları yeşil renkte */
+    margin-top: 0;
+}
+
+.basari-aciklama p {
+    font-size: 18px; /* Yazı boyutu büyütüldü */
+    line-height: 1.7;
+}
+
+
+/* --- HAKKIMDA BÖLÜMÜ --- */
+#hakkimda {
+    background-color: var(--card-bg);
+}
+
+.hakkimda-icerik {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.yetenekler {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.yetenekler span {
+    background: var(--dark-bg);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.yetenekler span:hover {
+    background: var(--secondary-color);
+    color: var(--dark-bg);
+}
+
+/* --- İLETİŞİM BÖLÜMÜ --- */
+#iletisim {
+    text-align: center;
+}
+
+#iletisim p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.iletisim-linkleri a {
+    margin: 10px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--card-bg);
+    color: #aaa;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* --- GİRİŞ ANİMASYONU --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- MOBİL UYUMLULUK (DÜZELTİLDİ) --- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px; 
+    }
+
+    nav .container {
+        flex-direction: column;
+    }
+
+    nav .nav-links {
+        padding-top: 10px;
+        text-align: center; /* Mobilde ortalanmasını sağlar */
+    }
+
+    nav .nav-links li {
+        margin: 0 10px; /* Mobilde yan yana sığsın diye ayarlandı */
+        margin-left: 0; /* Üstteki 'margin-left'i sıfırlar */
+        display: inline-block; /* Yan yana durmayı garantiler */
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+    
+    .hero p {
+        font-size: 20px;
+    }
+
+    section h2 {
+        font-size: 36px;
+    }
+
+    #projeler .proje-tipi-baslik {
+        font-size: 30px;
+    }
+
+    /* Başarılar kartı mobil ayarı (Tekil) */
+    .basari-karti-tekil {
+        flex-direction: column; /* Alt alta yığar */
+        padding: 20px;
+    }
+    
+    .basari-foto {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .basari-aciklama {
+        text-align: center;
+    }
+
+    .basari-aciklama h3 {
+        font-size: 24px;
+    }
+
+    .basari-aciklama p {
+        font-size: 15px;
+    }
+}
