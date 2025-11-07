@@ -1,18 +1,18 @@
-/* --- TEMEL AYARLAR VE YENİ KARANLIK TEMA --- */
+
 :root {
-    --primary-color: #4A90E2; /* Ana Vurgu Rengi (Mavi) */
-    --secondary-color: #50E3C2; /* İkincil Vurgu Rengi (Yeşil) */
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2; 
     
-    /* Yeni Koyu Tema Renkleri */
-    --dark-bg: #1a1a1a;         /* Ana Arka Plan */
-    --card-bg: #242424;         /* Kart, Menü, Footer Arka Planı */
-    --border-color: #444;       /* Zarif Kenarlık Rengi */
     
-    --text-color: #e0e0e0;      /* Ana Metin Rengi (Beyaz-Gri) */
-    --heading-color: #ffffff;   /* Başlık Rengi (Saf Beyaz) */
+    --dark-bg: #1a1a1a;         
+    --card-bg: #242424;         
+    --border-color: #444;       
+    
+    --text-color: #e0e0e0;      
+    --heading-color: #ffffff;   
 }
 
-/* Google Fonts (Aynen kalıyor) */
+
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -44,7 +44,7 @@ html {
     padding: 0 20px;
 }
 
-/* --- BUTONLAR (Modernize Edildi) --- */
+
 .btn {
     display: inline-block;
     background: var(--primary-color);
@@ -78,7 +78,7 @@ html {
     color: white;
 }
 
-/* --- NAVİGASYON (GENEL/MASAÜSTÜ) --- */
+
 nav {
     background: var(--card-bg);
     color: var(--text-color);
@@ -103,13 +103,13 @@ nav .logo {
 }
 
 nav .nav-links {
-    list-style: none; /* Noktaları kaldırır */
+    list-style: none; 
     margin: 0;
     padding: 0;
 }
 
 nav .nav-links li {
-    display: inline-block; /* Yan yana dizer */
+    display: inline-block; 
     margin-left: 25px;
 }
 
@@ -125,7 +125,6 @@ nav .nav-links a:hover {
     color: var(--primary-color);
 }
 
-/* --- ANA BAŞLIK (HERO - Efekt Eklendi) --- */
 .hero {
     background: 
         radial-gradient(ellipse at center, rgba(74, 144, 226, 0.15) 0%, rgba(26, 26, 26, 0) 70%), 
@@ -157,7 +156,7 @@ nav .nav-links a:hover {
     margin-bottom: 30px;
 }
 
-/* --- BÖLÜM AYARLARI --- */
+
 section {
     padding: 80px 0;
 }
@@ -172,7 +171,7 @@ section:nth-of-type(even) {
     background-color: transparent; 
 }
 
-/* --- PROJELER BÖLÜMÜ --- */
+
 .proje-galerisi {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -271,15 +270,15 @@ section:nth-of-type(even) {
 }
 
 
-/* --- YENİ BÖLÜM: BAŞARILAR (Tekil Karta Göre Güncellendi) --- */
+
 #basarilar {
-    padding-top: 0; /* Projeler bölümünün hemen altında, ekstra boşluk olmasın */
+    padding-top: 0; 
 }
 
-/* .basari-galerisi stili kaldırıldı (artık grid değil) */
+
 
 .basari-karti-tekil {
-    display: flex; /* Fotoğraf ve yazıyı yan yana koyar */
+    display: flex; 
     align-items: center;
     gap: 30px;
     background: var(--card-bg);
@@ -292,41 +291,41 @@ section:nth-of-type(even) {
 
 .basari-karti-tekil:hover {
     transform: translateY(-5px);
-    /* Başarılar kartının üzerine gelince yeşil gölge */
+    
     box-shadow: 0 8px 25px rgba(80, 227, 194, 0.2); 
 }
 
 .basari-foto {
-    flex: 1; /* Fotoğrafın kaplayacağı alan */
-    min-width: 300px; /* Fotoğrafın çok küçülmesini engeller */
-    border-bottom: none; /* Önceki stilden kalanı sıfırlar */
+    flex: 1; 
+    min-width: 300px; 
+    border-bottom: none; 
 }
 
 .basari-foto img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 5px; /* Fotoğrafa hafif ovallik verir */
+    border-radius: 5px; 
 }
 
 .basari-aciklama {
-    flex: 2; /* Açıklamanın kaplayacağı alan */
-    padding: 0; /* Önceki stilden kalanı sıfırlar */
+    flex: 2; 
+    padding: 0; 
 }
 
 .basari-aciklama h3 {
-    font-size: 32px; /* Yazı boyutu büyütüldü */
-    color: var(--secondary-color); /* Başarı başlıkları yeşil renkte */
+    font-size: 32px; 
+    color: var(--secondary-color); 
     margin-top: 0;
 }
 
 .basari-aciklama p {
-    font-size: 18px; /* Yazı boyutu büyütüldü */
+    font-size: 18px; 
     line-height: 1.7;
 }
 
 
-/* --- HAKKIMDA BÖLÜMÜ --- */
+
 #hakkimda {
     background-color: var(--card-bg);
 }
@@ -377,7 +376,7 @@ section:nth-of-type(even) {
     margin: 10px;
 }
 
-/* --- FOOTER --- */
+
 footer {
     background: var(--card-bg);
     color: #aaa;
@@ -387,7 +386,7 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-/* --- GİRİŞ ANİMASYONU --- */
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -399,7 +398,7 @@ footer {
     }
 }
 
-/* --- MOBİL UYUMLULUK (DÜZELTİLDİ) --- */
+
 @media (max-width: 768px) {
     body {
         padding-top: 100px; 
@@ -411,13 +410,13 @@ footer {
 
     nav .nav-links {
         padding-top: 10px;
-        text-align: center; /* Mobilde ortalanmasını sağlar */
+        text-align: center; 
     }
 
     nav .nav-links li {
-        margin: 0 10px; /* Mobilde yan yana sığsın diye ayarlandı */
-        margin-left: 0; /* Üstteki 'margin-left'i sıfırlar */
-        display: inline-block; /* Yan yana durmayı garantiler */
+        margin: 0 10px; 
+        margin-left: 0; 
+        display: inline-block; 
     }
 
     .hero h1 {
@@ -436,9 +435,9 @@ footer {
         font-size: 30px;
     }
 
-    /* Başarılar kartı mobil ayarı (Tekil) */
+    
     .basari-karti-tekil {
-        flex-direction: column; /* Alt alta yığar */
+        flex-direction: column; 
         padding: 20px;
     }
     
